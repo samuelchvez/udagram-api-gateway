@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udagram-api-gateway
+  labels:
+    app: udagram-api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: udagram-api-gateway
+  template:
+    metadata:
+      labels:
+        app: udagram-api-gateway
+    spec:
+      containers:
+      - name: udagram-api-gateway
+        image: schavezfuentes/udagram-api-gateway
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "64Mi"
+            cpu: "100m"
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always
