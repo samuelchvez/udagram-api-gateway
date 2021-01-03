@@ -17,13 +17,6 @@ spec:
       containers:
       - name: udagram-api-gateway
         image: schavezfuentes/udagram-api-gateway
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "100m"
-          limits:
-            memory: "64Mi"
-            cpu: "100m"
         ports:
         - containerPort: 8080
       restartPolicy: Always
